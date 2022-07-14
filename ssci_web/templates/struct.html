@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+    <title>社会科学领域摘要结构拆分检索平台</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="{% static "css/metisMenu.min.css" %}" rel="stylesheet">
+
+    <!-- Timeline CSS -->
+    <link href="{% static "css/timeline.css" %}" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="{% static "css/startmin.css" %}" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="{% static "css/morris.css"%}" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="{% static "css/font-awesome.min.css" %}" rel="stylesheet" type="text/css">
+    <script src="{% static "js/jquery.min.js" %}"></script>
+    <link href="https://unpkg.com/bootstrap-table@1.15.3/dist/bootstrap-table.min.css" rel="stylesheet" >
+    <script src="https://unpkg.com/bootstrap-table@1.15.3/dist/bootstrap-table.min.js"></script>
+
+    {#    <link rel="stylesheet" href="{% static 'all.css' %}" >#}
+    {#    <link rel="stylesheet" href="{% static 'bootstrap-table.min.css' %}">#}
+    {#    <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">#}
+    <style>
+        em { color: #b81e15}
+    </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+
+    <![endif]-->
+</head>
+<body>
+
+<div id="wrapper">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/"><i class="fa fa-home fa-fw"></i>SSCI Abstract Deconstruction & Search</a>
+        </div>
+
+        <ul class="nav navbar-right navbar-top-links">
+            <li>
+                <a  href="/">Search</a>
+            </li>
+            <li>
+                <a  href="/about">About</a>
+            </li>
+{#            <li class="dropdown">#}
+{#                <a class="dropdown-toggle" data-toggle="dropdown" href="#">#}
+{#                    <i class="fa fa-user fa-fw"></i>User<b class="caret"></b>#}
+{#                </a>#}
+{#                <ul class="dropdown-menu dropdown-user">#}
+{#                    <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>#}
+{#                    </li>#}
+{#                    <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>#}
+{#                    </li>#}
+{#                    <li class="divider"></li>#}
+{#                    <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>#}
+{#                    </li>#}
+{#                </ul>#}
+{#            </li>#}
+        </ul>
+    </nav>
+    <div id="page-wrapper" class="container">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h4 class="page-header"></h4>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            {#             <div class="row">#}
+            {#                 <h6 class="page-header">输入摘要文本</h6>#}
+            {#             </div>#}
+
+            <!-- /.row -->
+            <div class="row">
+                <textarea id="input_text" class="form-control" aria-label="With textarea" style="margin: 0px 3px 0px 0px; width: 1136px; height: 225px;"></textarea>
+            </div>
+            <div class="row" style="margin: auto; max-width: 600px;">
+                <div class="col-lg-4 col-md-4">
+                    <label>
+                        <input type="radio" name="options" value="seq">Sequence Labeling
+                    </label>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <label>
+                        <input type="radio" name="options" value="cls">Text Classification
+                    </label>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <button id ="upload_text" class="btn btn-outline-secondary" type="button" onclick="up_d()">Abstract Deconstruction</button>
+                </div>
+            </div>
+            <div class="row" style="margin: auto; max-width: 600px;" id="dis_color">
+                {#                <div class="col-lg-2 col-md-2">#}
+                {#                    <div style="background: #bce784; color: #ffffff"><p class="text-center">Backgroud</p></div>#}
+                {#                </div>#}
+                {#                <div class="col-lg-2 col-md-2">#}
+                {#                    <div style="background: #5dd39e; color: #ffffff"><p class="text-center">Purpose</p></div>#}
+                {#                </div>#}
+                {#                <div class="col-lg-2 col-md-2">#}
+                {#                    <div style="background: #348aa7; color: #ffffff"><p class="text-center">Method</p></div>#}
+                {#                </div>#}
+                {#                <div class="col-lg-2 col-md-2">#}
+                {#                    <div style="background: #c77dff; color: #ffffff"><p class="text-center">Result</p></div>#}
+                {#                </div>#}
+                {#                <div class="col-lg-2 col-md-2">#}
+                {#                    <div style="background: #cae9ff; color: #ffffff"><p class="text-center">Conclusion</p></div>#}
+                {#                </div>#}
+            </div>
+            {#                <div class="col-lg-1 col-md-1">#}
+            {#                    <div style="background: #CCCCCC; color: #ffffff"><p class="text-center">药物</p></div>#}
+            {#                </div>#}
+            {#                <div class="col-lg-1 col-md-1">#}
+            {#                    <div style="background: #663366; color: #ffffff"><p class="text-center">动物</p></div>#}
+            {#                </div>#}
+            {#                <div class="col-lg-1 col-md-1">#}
+            {#                    <div style="background: #CCFF99; color: #ffffff"><p class="text-center">病原体</p></div>#}
+            {#                </div>#}
+            {#                <div class="col-lg-1 col-md-1">#}
+            {#                    <div style="background: #666699; color: #ffffff"><p class="text-center">数字</p></div>#}
+            {#                </div>#}
+            {#                <div class="col-lg-2 col-md-2">#}
+            {#                    <div style="background: #333399; color: #ffffff"><p class="text-center">人体器官</p></div>#}
+            {#                </div>#}
+
+        </div>
+        <div class="row" id="entity">
+            <p></p>
+
+        </div>
+
+        {#            <div class="row" style="margin: auto; max-width: 600px;">#}
+        {#                <div class="input-group">#}
+        {#                    <input id="search_input" type="text" class="form-control center-column" placeholder="Search...">#}
+        {#                    <span class="input-group-btn">#}
+        {#                    <button id="search_btn" class="btn btn-primary" type="button">#}
+        {#                        <i class="fa fa-search"></i>#}
+        {#                    </button>#}
+        {#                </span>#}
+        {#                    </p>#}
+        {#                </div>#}
+        {#            </div>#}
+        {#            <div class="row" style="margin: auto; max-width: 400px;">#}
+        {#                <label class="">#}
+        {#                    <input type="radio" name="options" value="Background">Background#}
+        {#                </label>#}
+        {#                <label  class="">#}
+        {#                    <input type="radio" name="options" value="Purpose">Purpose#}
+        {#                </label>#}
+        {#                <label class="">#}
+        {#                    <input  type="radio" name="options" value="Method">Method#}
+        {#                </label>#}
+        {#                <label class="">#}
+        {#                    <input  type="radio" name="options" value="Result">Result#}
+        {#                </label>#}
+        {#                <label class="">#}
+        {#                    <input  type="radio" name="options" value="Conclusion">Conclusion#}
+        {#                </label>#}
+        {#            </div>#}
+    </div>
+
+</div>
+</div>
+<footer class="footer" style="background-color: #222222; color: #9d9d9d; border-color: #080808; height: 45px; ">
+    <!-- Copyright -->
+    <p class="text-center" style="padding-top: 15px">Nanjing Agricultural University Text Mining Team. All rights reserved Copyright© 2020</p>
+    <!-- Copyright -->
+</footer>
+</div>
+<!-- Footer -->
+
+<!-- jQuery -->
+{#<script src="{% static "js/jquery.min.js" %}"></script>#}
+{#<script src="{% static 'jquery-3.3.1.min.js' %}"></script>#}
+
+<!-- Bootstrap Core JavaScript -->
+<script src="{% static "js/bootstrap.min.js" %}"></script>
+{#<script src="{% static 'bootstrap.min.js' %}"></script>#}
+
+<!-- Metis Menu Plugin JavaScript -->
+<script src="{% static "js/metisMenu.min.js" %}"></script>
+
+<!-- Morris Charts JavaScript -->
+<script src="{% static "js/raphael.min.js" %}"></script>
+<script src="{% static "js/morris.min.js" %}"></script>
+<script src="{% static "js/morris-data.js" %}"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="{% static "js/startmin.js" %}"></script>
+{#<script src="{% static "change_column.js" %}"></script>#}
+{#<script src="{% static 'popper.min.js' %}"></script>#}
+{#<script src="{% static 'bootstrap-table.min.js' %}"></script>#}
+
+<script>
+    var color_map = {
+        "Backgroud": "#bce784", // Backgroud
+        "Purpose": "#5dd39e", // purpose
+        "Method":  "#348aa7", // Method
+        "Result": "#c77dff", // Result
+        "Conclusion": "#cae9ff", // Conclusion
+    }
+
+    var tag_map = {
+        "B": "Backgroud",
+        "P": "Purpose",
+        "M": "Method",
+        "R": "Result",
+        "C": "Conclusion",
+    }
+
+    var render_cls_line = function (data) {
+        entity_html = ""
+        for(var tag in tag_map) {
+            if(data[tag]) {
+                entity_html +=  "<strong>" + tag_map[tag] + ": " + "</strong>" +  "<p>" + data[tag].join(".") + ".</p>"
+            }
+        }
+        var entity = document.getElementById('entity')
+        entity.insertAdjacentHTML('afterend', entity_html)
+    }
+
+    var render_color = function () {
+        color_html = ""
+        for(var tag in tag_map) {
+            color_html += '<div class="col-lg-2 col-md-2"> <div style="background: ' + color_map[tag_map[tag]] + '; color: #ffffff"><p class="text-center">' + tag_map[tag] + '</p></div></div>'
+        }
+        console.log(color_html)
+        var dis_color = document.getElementById('dis_color')
+        {#dis_color.innerHTML = color_html#}
+    }
+    var render_cls = function (data) {
+        entity_html = ""
+        for(var tag in tag_map) {
+            {#entity_html += "<mark style='background-color: " + color_map[tag_map[tag]] + "'>" + data[tag].join(".")  + ".</mark>"#}
+            entity_html += "<b>[" + tag_map[tag] + "</b>] " + data[tag].join(".") + ". "
+        }
+        render_color()
+        var entity = document.getElementById('entity')
+        entity.insertAdjacentHTML('afterend', entity_html)
+    }
+    var render_seq = function (response_data) {
+        text = response_data.text
+        entity_tag = response_data.label
+        entity_html = ""
+        console.log(entity_tag)
+        for (i = 0; i < text.length; i++) {
+            c = text[i]
+            if (entity_tag[i] === "O") {
+                entity_html += c
+            } else {
+                flag = entity_tag[i].split("-")[0]
+                tag_type = entity_tag[i].split("-")[1]
+                if (flag == "B") {
+                    {#entity_html += "<mark style='background-color: " + color_map[tag_map[tag_type]] + "'>" + c + " "#}
+                    entity_html += "<b>[" + tag_map[tag_type] + "</b>] " + c + " "
+                } else if (flag == "S") {
+                    entity_html += "<b>[" + tag_map[tag_type] + "</b>] "  +  c  + " "
+                } else if (flag == "E") {
+                    entity_html +=  c  + " "
+                } else if (flag == "I") {
+                    entity_html +=  c  + " "
+                }
+            }
+        }
+        var entity = document.getElementById('entity')
+        render_color()
+        entity.insertAdjacentHTML('afterend', entity_html)
+
+    }
+
+    var up_d = function() {
+        text = $("#input_text").val();
+        var method = $('input:radio:checked').val();
+        $.ajax({
+            type: 'GET',
+            url: '/get_struct?text=' + text + "&method=" + method,
+            success: function (response_data) {
+                if (method === "cls") {
+                    render_cls(response_data)
+                } else{
+                    render_seq(response_data)
+                }
+
+            }
+        })
+    }
+
+</script>
+</body>
+
+</html>

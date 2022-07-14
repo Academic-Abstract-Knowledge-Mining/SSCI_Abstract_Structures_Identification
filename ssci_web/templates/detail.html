@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+    <title>突发公共卫生重大传染病实体识别平台</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="{% static "css/metisMenu.min.css" %}" rel="stylesheet">
+
+    <!-- Timeline CSS -->
+    <link href="{% static "css/timeline.css" %}" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="{% static "css/startmin.css" %}" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="{% static "css/morris.css"%}" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="{% static "css/font-awesome.min.css" %}" rel="stylesheet" type="text/css">
+    <script src="{% static "js/jquery.min.js" %}"></script>
+    <link href="https://unpkg.com/bootstrap-table@1.15.3/dist/bootstrap-table.min.css" rel="stylesheet" >
+    <script src="https://unpkg.com/bootstrap-table@1.15.3/dist/bootstrap-table.min.js"></script>
+
+    {#    <link rel="stylesheet" href="{% static 'all.css' %}" >#}
+    {#    <link rel="stylesheet" href="{% static 'bootstrap-table.min.css' %}">#}
+    {#    <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">#}
+    <style>
+        em { color: #b81e15}
+    </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+
+    <![endif]-->
+</head>
+<body>
+
+<div id="wrapper">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/"><i class="fa fa-home fa-fw"></i>社会科学领域摘要结构拆分检索平台</a>
+        </div>
+
+        <ul class="nav navbar-right navbar-top-links">
+            <li>
+                <a  href="/about">关于我们</a>
+            </li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    <i class="fa fa-user fa-fw"></i>用户<b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu dropdown-user">
+                    <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                    </li>
+                    <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <div id="page-wrapper" class="container">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h4 class="page-header"></h4>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+
+            <!-- /.row -->
+
+            <div class="row" style="margin: auto; max-width: 800px;">
+                <label>标题： </label> <p>{{ TI }}</p>
+                <label>作者： </label> <p>{{ AU }}</p>
+                <label>出版年： </label> <p>{{ PY }}</p>
+                <label>来源出版物： </label> <p>{{ SO }}</p>
+{#                <label>摘要： </label> <p>{{ AB }}</p>#}
+                <label>摘要： </label> <p>{{ abstract | safe }}</p>
+                <label>关键词： </label> <p>{{ DE }}</p>
+                <label>扩展关键词： </label> <p>{{ ID }}</p>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<footer class="footer" style="background-color: #222222; color: #9d9d9d; border-color: #080808; height: 45px; ">
+    <!-- Copyright -->
+    <p class="text-center" style="padding-top: 15px">南京农业大学领域知识分析挖掘实验室 版权所有 Copyright© 2020</p>
+    <!-- Copyright -->
+</footer>
+</div>
+<!-- Footer -->
+
+<!-- jQuery -->
+{#<script src="{% static "js/jquery.min.js" %}"></script>#}
+{#<script src="{% static 'jquery-3.3.1.min.js' %}"></script>#}
+
+<!-- Bootstrap Core JavaScript -->
+<script src="{% static "js/bootstrap.min.js" %}"></script>
+{#<script src="{% static 'bootstrap.min.js' %}"></script>#}
+
+<!-- Metis Menu Plugin JavaScript -->
+<script src="{% static "js/metisMenu.min.js" %}"></script>
+
+<!-- Morris Charts JavaScript -->
+<script src="{% static "js/raphael.min.js" %}"></script>
+<script src="{% static "js/morris.min.js" %}"></script>
+<script src="{% static "js/morris-data.js" %}"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="{% static "js/startmin.js" %}"></script>
+{#<script src="{% static "change_column.js" %}"></script>#}
+{#<script src="{% static 'popper.min.js' %}"></script>#}
+{#<script src="{% static 'bootstrap-table.min.js' %}"></script>#}
+
+
+</body>
+
+</html>

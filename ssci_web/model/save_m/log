@@ -1,0 +1,260 @@
+2020-06-14 21:25:10,846:CRITICAL: Writing to /home/pgrad/jc/ssci/text_cnn_new/runs/1
+
+2020-06-14 21:25:10,846:CRITICAL: /home/pgrad/jc/ssci/bert/data/Abst1/train.tsv
+2020-06-14 21:25:10,846:CRITICAL: /home/pgrad/jc/ssci/bert/data/Abst1/test.tsv
+2020-06-14 21:46:43,959:CRITICAL:               precision    recall  f1-score   support
+
+           B     0.8113    0.6723    0.7353      9478
+           C     0.8384    0.8210    0.8296     12907
+           M     0.9010    0.9372    0.9187     12881
+           P     0.7594    0.7694    0.7644      6158
+           R     0.8234    0.9158    0.8671     11528
+
+   micro avg     0.8373    0.8373    0.8373     52952
+   macro avg     0.8267    0.8231    0.8230     52952
+weighted avg     0.8363    0.8373    0.8350     52952
+
+2020-06-14 21:46:44,465:CRITICAL: Saved best model checkpoint to /home/pgrad/jc/ssci/text_cnn_new/runs/1/checkpoints/model
+
+2020-06-14 22:08:01,645:CRITICAL:               precision    recall  f1-score   support
+
+           B     0.7957    0.8186    0.8070      9478
+           C     0.8669    0.8822    0.8745     12907
+           M     0.9230    0.9554    0.9389     12881
+           P     0.8333    0.7705    0.8007      6158
+           R     0.9245    0.8852    0.9045     11528
+
+   micro avg     0.8763    0.8763    0.8763     52952
+   macro avg     0.8687    0.8624    0.8651     52952
+weighted avg     0.8764    0.8763    0.8760     52952
+
+2020-06-14 22:08:02,736:CRITICAL: Saved best model checkpoint to /home/pgrad/jc/ssci/text_cnn_new/runs/1/checkpoints/model
+
+2020-06-14 22:29:20,457:CRITICAL:               precision    recall  f1-score   support
+
+           B     0.8105    0.8461    0.8279      9478
+           C     0.8837    0.8977    0.8907     12907
+           M     0.9567    0.9396    0.9481     12881
+           P     0.8451    0.7956    0.8196      6158
+           R     0.9152    0.9128    0.9140     11528
+
+   micro avg     0.8901    0.8901    0.8901     52952
+   macro avg     0.8822    0.8784    0.8800     52952
+weighted avg     0.8907    0.8901    0.8902     52952
+
+2020-06-14 22:29:21,560:CRITICAL: Saved best model checkpoint to /home/pgrad/jc/ssci/text_cnn_new/runs/1/checkpoints/model
+
+2020-06-14 22:50:39,205:CRITICAL:               precision    recall  f1-score   support
+
+           B     0.8117    0.8714    0.8405      9478
+           C     0.9135    0.8817    0.8973     12907
+           M     0.9417    0.9604    0.9510     12881
+           P     0.8749    0.7892    0.8298      6158
+           R     0.9168    0.9248    0.9208     11528
+
+   micro avg     0.8976    0.8976    0.8976     52952
+   macro avg     0.8917    0.8855    0.8879     52952
+weighted avg     0.8984    0.8976    0.8975     52952
+
+2020-06-14 22:50:40,291:CRITICAL: Saved best model checkpoint to /home/pgrad/jc/ssci/text_cnn_new/runs/1/checkpoints/model
+
+2020-06-14 23:11:58,237:CRITICAL:               precision    recall  f1-score   support
+
+           B     0.8233    0.8742    0.8480      9478
+           C     0.9002    0.9125    0.9063     12907
+           M     0.9532    0.9571    0.9551     12881
+           P     0.8878    0.7824    0.8318      6158
+           R     0.9297    0.9230    0.9263     11528
+
+   micro avg     0.9036    0.9036    0.9036     52952
+   macro avg     0.8989    0.8898    0.8935     52952
+weighted avg     0.9043    0.9036    0.9034     52952
+
+2020-06-14 23:11:59,453:CRITICAL: Saved best model checkpoint to /home/pgrad/jc/ssci/text_cnn_new/runs/1/checkpoints/model
+
+2020-06-14 23:33:18,341:CRITICAL:               precision    recall  f1-score   support
+
+           B     0.8593    0.8540    0.8566      9478
+           C     0.9036    0.9141    0.9088     12907
+           M     0.9517    0.9601    0.9559     12881
+           P     0.8570    0.8508    0.8539      6158
+           R     0.9338    0.9209    0.9273     11528
+
+   micro avg     0.9086    0.9086    0.9086     52952
+   macro avg     0.9011    0.9000    0.9005     52952
+weighted avg     0.9085    0.9086    0.9086     52952
+
+2020-06-14 23:33:19,464:CRITICAL: Saved best model checkpoint to /home/pgrad/jc/ssci/text_cnn_new/runs/1/checkpoints/model
+
+2020-06-14 23:54:39,638:CRITICAL:               precision    recall  f1-score   support
+
+           B     0.8839    0.8350    0.8588      9478
+           C     0.9116    0.9066    0.9091     12907
+           M     0.9533    0.9596    0.9564     12881
+           P     0.8469    0.8722    0.8594      6158
+           R     0.9116    0.9375    0.9244     11528
+
+   micro avg     0.9094    0.9094    0.9094     52952
+   macro avg     0.9015    0.9022    0.9016     52952
+weighted avg     0.9093    0.9094    0.9091     52952
+
+2020-06-14 23:54:40,734:CRITICAL: Saved best model checkpoint to /home/pgrad/jc/ssci/text_cnn_new/runs/1/checkpoints/model
+
+2020-06-15 00:15:59,680:CRITICAL:               precision    recall  f1-score   support
+
+           B     0.8580    0.8644    0.8612      9478
+           C     0.9084    0.9144    0.9114     12907
+           M     0.9543    0.9564    0.9554     12881
+           P     0.8538    0.8667    0.8602      6158
+           R     0.9384    0.9158    0.9269     11528
+
+   micro avg     0.9104    0.9104    0.9104     52952
+   macro avg     0.9026    0.9035    0.9030     52952
+weighted avg     0.9107    0.9104    0.9105     52952
+
+2020-06-15 00:16:00,756:CRITICAL: Saved best model checkpoint to /home/pgrad/jc/ssci/text_cnn_new/runs/1/checkpoints/model
+
+2020-06-15 00:37:19,454:CRITICAL:               precision    recall  f1-score   support
+
+           B     0.8691    0.8533    0.8612      9478
+           C     0.9127    0.9079    0.9103     12907
+           M     0.9398    0.9664    0.9529     12881
+           P     0.8720    0.8571    0.8645      6158
+           R     0.9259    0.9243    0.9251     11528
+
+   micro avg     0.9100    0.9100    0.9100     52952
+   macro avg     0.9039    0.9018    0.9028     52952
+weighted avg     0.9096    0.9100    0.9097     52952
+
+2020-06-15 00:58:37,897:CRITICAL:               precision    recall  f1-score   support
+
+           B     0.8760    0.8493    0.8625      9478
+           C     0.9088    0.9123    0.9106     12907
+           M     0.9468    0.9614    0.9540     12881
+           P     0.8702    0.8633    0.8667      6158
+           R     0.9212    0.9283    0.9247     11528
+
+   micro avg     0.9108    0.9108    0.9108     52952
+   macro avg     0.9046    0.9029    0.9037     52952
+weighted avg     0.9104    0.9108    0.9105     52952
+
+2020-06-15 01:19:57,615:CRITICAL:               precision    recall  f1-score   support
+
+           B     0.8546    0.8728    0.8636      9478
+           C     0.9225    0.8962    0.9091     12907
+           M     0.9519    0.9559    0.9539     12881
+           P     0.8733    0.8587    0.8660      6158
+           R     0.9152    0.9323    0.9237     11528
+
+   micro avg     0.9100    0.9100    0.9100     52952
+   macro avg     0.9035    0.9032    0.9033     52952
+weighted avg     0.9102    0.9100    0.9100     52952
+
+2020-06-15 01:41:16,220:CRITICAL:               precision    recall  f1-score   support
+
+           B     0.8613    0.8653    0.8633      9478
+           C     0.8985    0.9221    0.9102     12907
+           M     0.9427    0.9623    0.9524     12881
+           P     0.8944    0.8379    0.8653      6158
+           R     0.9357    0.9146    0.9250     11528
+
+   micro avg     0.9103    0.9103    0.9103     52952
+   macro avg     0.9065    0.9004    0.9032     52952
+weighted avg     0.9102    0.9103    0.9101     52952
+
+2020-06-15 02:02:33,116:CRITICAL:               precision    recall  f1-score   support
+
+           B     0.8605    0.8642    0.8623      9478
+           C     0.9124    0.9074    0.9099     12907
+           M     0.9485    0.9572    0.9528     12881
+           P     0.8862    0.8508    0.8681      6158
+           R     0.9167    0.9291    0.9229     11528
+
+   micro avg     0.9099    0.9099    0.9099     52952
+   macro avg     0.9048    0.9017    0.9032     52952
+weighted avg     0.9098    0.9099    0.9098     52952
+
+2020-06-15 02:23:48,243:CRITICAL:               precision    recall  f1-score   support
+
+           B     0.8714    0.8527    0.8619      9478
+           C     0.9039    0.9145    0.9092     12907
+           M     0.9439    0.9597    0.9517     12881
+           P     0.8772    0.8576    0.8673      6158
+           R     0.9258    0.9237    0.9247     11528
+
+   micro avg     0.9098    0.9098    0.9098     52952
+   macro avg     0.9044    0.9016    0.9030     52952
+weighted avg     0.9095    0.9098    0.9096     52952
+
+2020-06-15 02:45:01,866:CRITICAL:               precision    recall  f1-score   support
+
+           B     0.8478    0.8783    0.8628      9478
+           C     0.9131    0.9029    0.9080     12907
+           M     0.9471    0.9565    0.9518     12881
+           P     0.9003    0.8344    0.8661      6158
+           R     0.9171    0.9271    0.9221     11528
+
+   micro avg     0.9089    0.9089    0.9089     52952
+   macro avg     0.9051    0.8999    0.9022     52952
+weighted avg     0.9091    0.9089    0.9088     52952
+
+2020-06-15 03:06:15,621:CRITICAL:               precision    recall  f1-score   support
+
+           B     0.8575    0.8705    0.8640      9478
+           C     0.9097    0.9055    0.9076     12907
+           M     0.9525    0.9512    0.9518     12881
+           P     0.8935    0.8431    0.8676      6158
+           R     0.9090    0.9311    0.9199     11528
+
+   micro avg     0.9087    0.9087    0.9087     52952
+   macro avg     0.9044    0.9003    0.9022     52952
+weighted avg     0.9087    0.9087    0.9086     52952
+
+2020-06-15 03:27:29,181:CRITICAL:               precision    recall  f1-score   support
+
+           B     0.8676    0.8599    0.8637      9478
+           C     0.9052    0.9110    0.9081     12907
+           M     0.9437    0.9597    0.9517     12881
+           P     0.8878    0.8451    0.8659      6158
+           R     0.9178    0.9242    0.9210     11528
+
+   micro avg     0.9089    0.9089    0.9089     52952
+   macro avg     0.9044    0.9000    0.9021     52952
+weighted avg     0.9086    0.9089    0.9086     52952
+
+2020-06-15 03:48:41,774:CRITICAL:               precision    recall  f1-score   support
+
+           B     0.8672    0.8575    0.8623      9478
+           C     0.9044    0.9089    0.9066     12907
+           M     0.9543    0.9489    0.9516     12881
+           P     0.8715    0.8657    0.8686      6158
+           R     0.9137    0.9260    0.9198     11528
+
+   micro avg     0.9081    0.9081    0.9081     52952
+   macro avg     0.9022    0.9014    0.9018     52952
+weighted avg     0.9081    0.9081    0.9081     52952
+
+2020-06-15 04:09:53,953:CRITICAL:               precision    recall  f1-score   support
+
+           B     0.8577    0.8686    0.8631      9478
+           C     0.9132    0.9000    0.9065     12907
+           M     0.9439    0.9571    0.9504     12881
+           P     0.8853    0.8509    0.8678      6158
+           R     0.9159    0.9258    0.9208     11528
+
+   micro avg     0.9082    0.9082    0.9082     52952
+   macro avg     0.9032    0.9005    0.9017     52952
+weighted avg     0.9081    0.9082    0.9081     52952
+
+2020-06-15 04:31:05,948:CRITICAL:               precision    recall  f1-score   support
+
+           B     0.8524    0.8714    0.8618      9478
+           C     0.9117    0.9019    0.9068     12907
+           M     0.9494    0.9517    0.9505     12881
+           P     0.8916    0.8399    0.8650      6158
+           R     0.9103    0.9303    0.9202     11528
+
+   micro avg     0.9075    0.9075    0.9075     52952
+   macro avg     0.9031    0.8990    0.9008     52952
+weighted avg     0.9076    0.9075    0.9074     52952
+
