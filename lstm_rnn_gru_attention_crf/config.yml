@@ -1,0 +1,39 @@
+model: POS Tagging
+model_params:
+    hidden_dim: 200
+    batch_size: 256
+    is_attention: False
+
+    epoch_num: 200
+    max_patience: 5 #eairlystop参数
+    char_embed: True
+    num_layers: 2 #bilstm层数
+    feature_nums: 1  #特征列数，最后一列标签不算
+    embed_params:
+    #每一列特征的参数
+    -   dropout_rate: 0.5
+        dimension: 100
+        pre_train: False
+        vec_path: 'sgns.wiki.bigram-char' #请使用gensim 存为 txt。注：非二进制文件，格式为头一行： 词数 维度 ，后面的： 词  emdedding
+
+    use_crf: True
+    rnn_unit: 'gru'  # 'lstm' or 'gru'
+    optimizer: 'Adam'
+    learning_rate: 0.001
+    clip: 5
+
+    dropout_rate: 0.5
+    path_save: 'modeloutput/gru_random_vec'
+    model_restore_path: 'lstm_rnn_gru_attention_crf/gru_model'
+
+
+data_params:
+    feature_params:
+    -   min_count: 1
+        voc_name: 'f1_dic.pkl'
+        embed_name: 'f1_embed.pkl'
+
+
+    label2id: ['B-B', 'B-C', 'B-M', 'B-P', 'B-R', 'E-B', 'E-C', 'E-M', 'E-P', 'E-R', 'I-B', 'I-C', 'I-M', 'I-P', 'I-R']
+
+    path_test: 'data/test7.txt'

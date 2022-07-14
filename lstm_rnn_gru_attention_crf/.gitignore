@@ -1,0 +1,7 @@
+modeloutput
+__pycache__/
+voc/
+data/
+.idea/
+lstm_crf
+.yml
