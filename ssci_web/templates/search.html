@@ -1,0 +1,123 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <script src="{% static 'jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'popper.min.js' %}"></script>
+    <script src="{% static 'bootstrap.min.js' %}"></script>
+    <script src="{% static 'bootstrap-table.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'all.css' %}" >
+    <link rel="stylesheet" href="{% static 'bootstrap-table.min.css' %}">
+    <style>
+        em { color: #b81e15}
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row justify-content-center" style="margin-top: 30px">
+        <div class="col-12 col-md-10 col-lg-8">
+            <div class="card-body row no-gutters align-items-center">
+                <div class="col-auto">
+                    <select class="custom-select" id="IndexSelect">
+                        <option selected >Choose Index</option>
+                        <option value="full_text">full_text</option>
+                        <option value="knowledge_abstract">knowledge_abstract</option>
+                    </select>
+                </div>
+                <!--end of col-->
+                <div class="col">
+                    <input id='search_input' class="form-control form-control-lg form-control-borderless" type="search" placeholder="Input Query">
+                </div>
+                <!--end of col-->
+                <div class="col-auto">
+                    <button class="btn btn-lg btn-info" id="search_btn" >Search</button>
+                </div>
+                <!--end of col-->
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <table data-toggle="table"
+           id='table'
+            {#               data-url="/info/api/{{ label }}"#}
+            {#               data-search="true"#}
+            {#           data-classes="table-borderless"#}
+           data-show-header="true"
+           data-card-view="true"
+           data-click-to-select="true"
+           data-pagination="true"
+           data-pagination-pre-text="<"
+           data-pagination-next-text=">"
+           data-side-pagination="server"
+           data-page-list="[10]">
+        <thead>
+        <tr>
+
+            {#            <th >DOI</th>#}
+            <th data-field="doc_rank" data-visible="false">Index</th>
+            <th data-field="title" data-formatter="title_formatter">Title</th>
+            <th data-field="year">Year</th>
+            <th data-field="abstract" data-formatter="highlight_formatter"></th>
+            <th data-field="doi" data-formatter="doi_formatter" data-events="actionEvents"></th>
+            {#            <th data-field="id" data-formatter="forksFormatter" data-events="actionEvents">详情</th>#}
+        </tr>
+        <a href="detail.html" target="_blank"></a>
+        </thead>
+    </table>
+</div>
+<script type="text/javascript">
+    var base_url = '/search/'
+    function doi_formatter(value) {
+        console.log(value)
+        var ret = '<button id="Relevence" type="button" class="btn btn-info btn-sm">' + 'Relevence' + '</button>'
+        return ret
+    }
+    function highlight_formatter(value) {
+        var ret = "<p>" + value + "</p>"
+        return ret
+    }
+    function title_formatter(value, row, index) {
+        console.log(value, row, index);
+        // var detail_url= "https://onlinelibrary.wiley.com/doi/" + row.doi
+        var doc_rank = row.doc_rank;
+        var query = $('#search_input').val();
+        var detail_url= "/detail/" + row.doi + "/?query=" + query + "&doc_rank=" + doc_rank;
+        var ret = '<a href="' + detail_url + '"' + 'target="_blank"' + '>' + value + '</a>';
+        return ret
+    }
+    window.actionEvents = {
+        'click #Relevence': function (e, value, row, index) {
+            var doi = row.doi;
+            var doc_rank = row.doc_rank
+            var query = $('#search_input').val();
+            index = index + 1;
+            $.ajax({
+                type: 'GET',
+                url: '/feedback?query=' + query + "&doi=" + doi + "&doc_rank=" + doc_rank,
+                success: function (response_data) {
+                    window.confirm("反馈成功")
+                    console.log(response_data)
+                }
+
+            })
+        }
+    };
+    $(function () {
+        {#$('#table').bootstrapTable('refresh', { url: base_url });#}
+        $('#search_btn').click(function () {
+            var key_word = $('#search_input').val();
+            var index = $("#IndexSelect").val();
+            $('#table').bootstrapTable('refresh', { url: base_url + '?key_word=' + key_word + '&index=' + index});
+        });
+        $('#reset').click(function() {
+            $('#o_name').val('');
+            $('#table').bootstrapTable('refresh', { url: base_url });
+        });
+    });
+</script>
+</body>
+</html>

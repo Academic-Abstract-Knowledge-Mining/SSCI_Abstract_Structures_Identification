@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+    <title>社会科学领域摘要结构拆分检索平台</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="{% static "css/metisMenu.min.css" %}" rel="stylesheet">
+
+    <!-- Timeline CSS -->
+    <link href="{% static "css/timeline.css" %}" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="{% static "css/startmin.css" %}" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="{% static "css/morris.css"%}" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="{% static "css/font-awesome.min.css" %}" rel="stylesheet" type="text/css">
+    <script src="{% static "js/jquery.min.js" %}"></script>
+    <link href="https://unpkg.com/bootstrap-table@1.15.3/dist/bootstrap-table.min.css" rel="stylesheet" >
+    <script src="https://unpkg.com/bootstrap-table@1.15.3/dist/bootstrap-table.min.js"></script>
+
+    {#    <link rel="stylesheet" href="{% static 'all.css' %}" >#}
+    {#    <link rel="stylesheet" href="{% static 'bootstrap-table.min.css' %}">#}
+    {#    <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">#}
+    <style>
+        em { color: #b81e15}
+    </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+
+    <![endif]-->
+</head>
+<body>
+
+<div id="wrapper">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/"><i class="fa fa-home fa-fw"></i>SSCI Abstract Deconstruction & Search</a>
+        </div>
+
+        <ul class="nav navbar-right navbar-top-links">
+            <li>
+                <a  href="/struct">Abstract Deconstruction</a>
+            </li>
+            <li>
+                <a  href="/about">About</a>
+            </li>
+{#            <li class="dropdown">#}
+{#                <a class="dropdown-toggle" data-toggle="dropdown" href="#">#}
+{#                    <i class="fa fa-user fa-fw"></i>User<b class="caret"></b>#}
+{#                </a>#}
+{#                <ul class="dropdown-menu dropdown-user">#}
+{#                    <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>#}
+{#                    </li>#}
+{#                    <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>#}
+{#                    </li>#}
+{#                    <li class="divider"></li>#}
+{#                    <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>#}
+{#                    </li>#}
+{#                </ul>#}
+{#            </li>#}
+        </ul>
+    </nav>
+    <div id="page-wrapper" class="container">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h4 class="page-header"></h4>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+
+            <!-- /.row -->
+
+            <div class="row" style="margin: auto; max-width: 600px;">
+                <div class="input-group">
+                    <input id="search_input" type="text" class="form-control center-column" placeholder="Search...">
+                    <span class="input-group-btn">
+                    <button id="search_btn" class="btn btn-primary" type="button">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </span>
+                    </p>
+                </div>
+            </div>
+            <div class="row" style="margin: auto; max-width: 400px;">
+                <label class="">
+                    <input type="radio" name="options" value="引言">引言
+                </label>
+                <label  class="">
+                    <input type="radio" name="options" value="相关研究">相关研究
+                </label>
+                <label class="">
+                    <input  type="radio" name="options" value="方法">方法
+                </label>
+                <label class="">
+                    <input  type="radio" name="options" value="实验">实验
+                </label>
+                <label class="">
+                    <input  type="radio" name="options" value="结论">结论
+                </label>
+            </div>
+            {#        <div class="row justify-content-center" style="margin-top: 30px">#}
+            {#            <div class="col-12 col-md-10 col-lg-8">#}
+            {#                <div class="card-body row no-gutters align-items-center">#}
+            {#                    <div class="col-auto">#}
+            {#                        <select class="custom-select" id="IndexSelect">#}
+            {#                            <option selected >Choose Index</option>#}
+            {#                            <option value="full_text">full_text</option>#}
+            {#                            <option value="knowledge_abstract">knowledge_abstract</option>#}
+            {#                        </select>#}
+            {#                    </div>#}
+            {#                    <!--end of col-->#}
+            {#                    <div class="col">#}
+            {#                        <input id='search_input' class="form-control form-control-lg form-control-borderless" type="search" placeholder="Input Query">#}
+            {#                    </div>#}
+            {#                    <!--end of col-->#}
+            {#                    <div class="col-auto">#}
+            {#                        <button class="btn btn-lg btn-info" id="search_btn" >Search</button>#}
+            {#                    </div>#}
+            {#                    <!--end of col-->#}
+            {#                </div>#}
+            {#            </div>#}
+            {#        </div>#}
+            <div class="row" style="margin: auto; max-width: 1200px;">
+                <table data-toggle="table"
+                       id='table'
+{#                       data-url="/info/api/{{ label }}"#}
+{#                       data-search="true"#}
+{#                       data-classes="table-borderless"#}
+                       data-show-header="true"
+                       data-card-view="true"
+                       data-click-to-select="true"
+                       data-pagination="true"
+                       data-pagination-pre-text="<"
+                       data-pagination-next-text=">"
+                       data-side-pagination="server"
+                       data-page-list="[10]">
+                    <thead>
+                    <tr>
+
+                        {#            <th >DOI</th>#}
+                        <th data-field="doc_rank" data-visible="false">Index</th>
+                        <th data-field="title" data-formatter="title_formatter">Title</th>
+                        <th data-field="year">Year</th>
+                        <th data-field="au">author</th>
+                        <th id ="abstract" data-field="abstract" data-formatter="highlight_formatter">aa</th>
+{#                        <th data-field="doi" data-formatter="doi_formatter" data-events="actionEvents"></th>#}
+                        {#            <th data-field="id" data-formatter="forksFormatter" data-events="actionEvents">详情</th>#}
+                    </tr>
+                    <a href="detail.html" target="_blank"></a>
+                    </thead>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>
+<footer class="footer" style="background-color: #222222; color: #9d9d9d; border-color: #080808; height: 45px; ">
+    <!-- Copyright -->
+    <p class="text-center" style="padding-top: 15px">Nanjing Agricultural University Text Mining Team. All rights reserved Copyright© 2020</p>
+    <!-- Copyright -->
+</footer>
+</div>
+<!-- Footer -->
+
+<!-- jQuery -->
+{#<script src="{% static "js/jquery.min.js" %}"></script>#}
+{#<script src="{% static 'jquery-3.3.1.min.js' %}"></script>#}
+
+<!-- Bootstrap Core JavaScript -->
+<script src="{% static "js/bootstrap.min.js" %}"></script>
+{#<script src="{% static 'bootstrap.min.js' %}"></script>#}
+
+<!-- Metis Menu Plugin JavaScript -->
+<script src="{% static "js/metisMenu.min.js" %}"></script>
+
+<!-- Morris Charts JavaScript -->
+<script src="{% static "js/raphael.min.js" %}"></script>
+<script src="{% static "js/morris.min.js" %}"></script>
+<script src="{% static "js/morris-data.js" %}"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="{% static "js/startmin.js" %}"></script>
+{#<script src="{% static "change_column.js" %}"></script>#}
+{#<script src="{% static 'popper.min.js' %}"></script>#}
+{#<script src="{% static 'bootstrap-table.min.js' %}"></script>#}
+
+<script type="text/javascript">
+    var base_url = '/search'
+    function doi_formatter(value) {
+        console.log(value)
+        var ret = '<button id="Relevence" type="button" class="btn btn-info btn-sm">' + 'Relevence' + '</button>'
+        return ret
+    }
+    function highlight_formatter(value) {
+        var ret = "<p>" + value + "</p>"
+        return ret
+    }
+    function title_formatter(value, row, index) {
+        console.log(value, row, index);
+        // var detail_url= "https://onlinelibrary.wiley.com/doi/" + row.doi
+        var doc_rank = row.doc_rank;
+        var query = $('#search_input').val();
+        var detail_url= "/detail" + "?id=" + row.id;
+        var ret = '<a href="' + detail_url + '"' + 'target="_blank"' + '>' + value + '</a>';
+        return ret
+    }
+    window.actionEvents = {
+        'click #Relevence': function (e, value, row, index) {
+            var doi = row.doi;
+            var doc_rank = row.doc_rank
+            var query = $('#search_input').val();
+            index = index + 1;
+            $.ajax({
+                type: 'GET',
+                url: '/feedback?query=' + query + "&doi=" + doi + "&doc_rank=" + doc_rank,
+                success: function (response_data) {
+                    window.confirm("反馈成功")
+                    console.log(response_data)
+                }
+            })
+        }
+    };
+    {#$('#table').bootstrapTable('refresh', { url: base_url });#}
+    $('#search_btn').click(function () {
+        var key_word = $('#search_input').val();
+        console.log(key_word)
+        var field = $('input:radio:checked').val();
+        $('#table').bootstrapTable('updateColumnTitle', {field: 'abstract', title: field})
+        $('#table').bootstrapTable('refresh', { url: base_url + '?key_word=' + key_word + '&field=' + field});
+    });
+    $('#reset').click(function() {
+        $('#o_name').val('');
+        $('#table').bootstrapTable('refresh', { url: base_url });
+    });
+
+</script>
+</body>
+
+</html>
