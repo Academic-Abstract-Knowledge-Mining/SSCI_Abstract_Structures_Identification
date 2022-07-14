@@ -53,7 +53,6 @@ Table Ⅰ shows the category distribution of the functional structures of abstra
 
 The dataset and parts of trained models are stored in [google drive](https://drive.google.com/drive/folders/1XKtxUvnAhrLLWNZO0WKCqifMuTFkOIxe?usp=sharing).
 
-The model and code are in this project.
 
 Code:
 
