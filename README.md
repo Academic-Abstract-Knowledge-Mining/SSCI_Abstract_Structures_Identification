@@ -1,5 +1,8 @@
 # SSCI_Abstract_Structures_Identification
+
 The data for the paper 'A Model for the Identification of the Functional Structures of Unstructured Abstracts in Social Sciences'.
+
+
 
 **Introduction**
 
@@ -8,6 +11,7 @@ Reorganising unstructured academic abstracts according to a certain logical stru
 This study investigated the structuring of abstracts in academic articles in the field of social sciences, using large-scale statistical analyses. The functional structures of sentences in the abstract  were identified  by using several models. The experimental results show that BERT exhibited the best performance, the overall F1 score of which was 86.23%.
 
 A web application for the identification of the functional structures of abstracts and their faceted search in social sciences was constructed.
+
 
 
 **Data**
@@ -28,7 +32,7 @@ The academic abstracts in this research were obtained from Web of Science (WOS).
 
 Sentences in abstracts in the social sciences include the following five functional elements, i.e., background, purpose, methods, results, and conclusions. An example of an annotated social science abstract from the dataset is shown in Fig. 2.
 
-<img src="image/clip_image006.jpg" alt="img" style="zoom: 67%;" />
+![](image/clip_image006.jpg)
 
 **Fig. 2 Example of an annotated abstract in the social science dataset**
 
@@ -48,7 +52,11 @@ Table Ⅰ shows the category distribution of the functional structures of abstra
 
 **DATASET & Trained Models & Code**
 
-The dataset and parts of trained models are stored in [google drive](https://drive.google.com/drive/folders/1XKtxUvnAhrLLWNZO0WKCqifMuTFkOIxe?usp=sharing).
+**DATASET:**
+
+​        The dataset and parts of trained models are stored in [google drive](https://drive.google.com/drive/folders/1XKtxUvnAhrLLWNZO0WKCqifMuTFkOIxe?usp=sharing).
+
+**Code:**
 
 The code of models for experiment are provided in this project.
 
@@ -56,5 +64,7 @@ The code of models for experiment are provided in this project.
 2. BERT: bert_classify.py
 3. LSTM & GRU: lstm_rnn_gru_attention_crf
 
+**Webcite:**
 
+​        [dataism.ai/struct](http://dataism.ai:6001/struct)
 
