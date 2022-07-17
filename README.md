@@ -50,7 +50,6 @@ Table Ⅰ shows the category distribution of the functional structures of abstra
 
 ------
 
-**DATASET & Trained Models & Code**
 
 **DATASET:**
 
