@@ -63,7 +63,4 @@ The code of models for experiment are provided in this project.
 2. BERT: bert_classify.py
 3. LSTM & GRU: lstm_rnn_gru_attention_crf
 
-**Webcite:**
-
-​        [dataism.ai/struct](http://dataism.ai:6001/struct)
 
